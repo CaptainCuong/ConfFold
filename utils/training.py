@@ -12,7 +12,6 @@ def train_epoch(args, model, loader, optimizer, device):
         
         data = data.to(device)
         optimizer.zero_grad()
-        batch_num_node = data.ptr[1:] - data.ptr[:-1]
         x = data.directions
 
         # Sampling random t for training
@@ -44,7 +43,6 @@ def test_epoch(args, model, loader, device):
     for data in tqdm(loader, total=len(loader)):
         
         data = data.to(device)
-        batch_num_node = data.ptr[1:] - data.ptr[:-1]
         x = data.directions
 
         # Sampling random t for training

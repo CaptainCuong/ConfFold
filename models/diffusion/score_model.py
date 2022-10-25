@@ -90,9 +90,9 @@ class ScoreNet(nn.Module):
         h = self.last_lin(h)
 
         # Normalize output
-        # marginal_prob_std = self.marginal_prob_std(t)
-        # marginal_prob_std = torch.cat([marginal_prob_std[i].tile((num_path,1)) for i, num_path in enumerate(data.num_paths)], dim=0)
-        # h = h / marginal_prob_std
+        marginal_prob_std = self.marginal_prob_std(t)
+        marginal_prob_std = torch.cat([marginal_prob_std[i].tile((num_path,1)) for i, num_path in enumerate(data.num_paths)], dim=0)
+        h = h / marginal_prob_std
         return h
 
 def marginal_prob_std(t, sigma):

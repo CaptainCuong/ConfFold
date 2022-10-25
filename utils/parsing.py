@@ -16,14 +16,14 @@ def parse_train_args():
 
     # Training arguments
     parser.add_argument('--n_epochs', type=int, default=250, help='Number of epochs for training')
-    parser.add_argument('--batch_size', type=int, default=1000, help='Batch size')
+    parser.add_argument('--batch_size', type=int, default=32, help='Batch size')
     parser.add_argument('--lr', type=float, default=1e-3, help='Initial learning rate')
     parser.add_argument('--num_workers', type=int, default=1, help='Number of workers for preprocessing')
     parser.add_argument('--optimizer', type=str, default='adam', help='Adam optimiser only one supported')
     parser.add_argument('--scheduler', type=str, default='plateau', help='LR scehduler: plateau or none')
     parser.add_argument('--scheduler_patience', type=int, default=20, help='Patience of plateau scheduler')
     parser.add_argument('--sigma', type=float, default=50, help='Maximum sigma used for training')
-    parser.add_argument('--limit_train_mols', type=int, default=100000, help='Limit to the number of molecules in dataset, 0 uses them all')
+    parser.add_argument('--limit_train_mols', type=int, default=100, help='Limit to the number of molecules in dataset, 0 uses them all')
     parser.add_argument('--boltzmann_weight', action='store_true', default=False, help='Whether to sample conformers based on B.w.')
     parser.add_argument('--eps', type=float, default=1e-3, help='Epsilon')
 
