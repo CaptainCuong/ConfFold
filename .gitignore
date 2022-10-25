@@ -1,0 +1,12 @@
+__pycache__
+data/**
+trash
+visualize/**
+test_run/**
+/experiment**
+/find_keywords.py
+**.pdb
+**.zip
+**.npy
+**.png
+**.csv
